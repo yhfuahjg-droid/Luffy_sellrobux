@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUFFY STORE — Robux Top-Up (@bloxfruitreseller1230)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Noto+Sans+Khmer:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #fbf5ef;
+      --card-bg: #ffffff;
+      --green-dark: #14532d;
+      --green-btn: #167c49;
+      --green-btn-hover: #12663b;
+      --gold-light: #fef08a;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: rgba(22, 124, 73, 0.2);
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Khmer', sans-serif;
+      background: var(--bg-cream);
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    .rbx-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+
+    .rbx-badge svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-14deg);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--green-dark);
+    }
+
+    .tg-pill {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 14px;
+    }
+
+    .hero-card {
+      border-radius: 20px;
+      padding: 20px 16px;
+      background: linear-gradient(155deg, #c81e1e 0%, #991b1b 55%, #14532d 100%);
+      color: #ffffff;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(153, 27, 27, 0.22);
+      margin-bottom: 14px;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: 'Fredoka', 'Noto Sans Khmer', sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.18;
+      margin-bottom: 8px;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      color: #fef9c3;
+      margin-bottom: 14px;
+    }
+
+    .promo-pill {
+      display: inline-block;
+      background: #14532d;
+      color: var(--gold-light);
+      border: 1px solid rgba(254, 240, 138, 0.45);
+      border-radius: 12px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .box-card {
+      background: var(--card-bg);
+      border: 1px solid #f1e6dc;
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .step-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .step-badge {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .username-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #d1d5db;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .username-input:focus {
+      border-color: var(--green-btn);
+    }
+
+    .safety-box {
+      background: #fefce8;
+      border: 1px solid #fde047;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      color: #713f12;
+      font-weight: 600;
+    }
+
+    .pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .pkg-tile {
+      position: relative;
+      display: block;
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 13px 12px;
+      text-align: left;
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+      transition: all 0.12s ease;
+    }
+
+    .pkg-tile * {
+      pointer-events: none;
+    }
+
+    .pkg-tile.active {
+      border-color: var(--green-btn);
+      background: #dcfce7;
+      box-shadow: 0 0 0 2px rgba(22, 124, 73, 0.22);
+    }
+
+    .pkg-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+
+    .pkg-robux {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .pkg-sub {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+    }
+
+    .pkg-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green-btn);
+    }
+
+    .pkg-tag {
+      position: absolute;
+      top: -8px;
+      right: 10px;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .total-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 4px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .total-label {
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .total-amount {
+      font-size: 1.35rem;
+      color: var(--green-btn);
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 14px;
+      background: var(--green-btn);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .primary-btn:hover {
+      background: var(--green-btn-hover);
+    }
+
+    .helper-caption {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .notice-card {
+      background: #fffdfb;
+      border: 1.5px solid #efe4da;
+      border-radius: 22px;
+      padding: 18px 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .notice-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #881337;
+      margin-bottom: 14px;
+    }
+
+    .notice-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #881337;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #881337;
+      flex-shrink: 0;
+    }
+
+    .notice-alert {
+      background: #fdf2f2;
+      border-left: 5px solid #be123c;
+      border-radius: 14px;
+      padding: 14px 14px;
+      margin-bottom: 16px;
+    }
+
+    .notice-alert-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #1f2937;
+      margin-bottom: 6px;
+    }
+
+    .notice-alert-body {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: #1f2937;
+      line-height: 1.65;
+    }
+
+    .notice-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .notice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef7f1;
+      border: 1px solid #cce5d5;
+      color: #14532d;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .notice-inbox {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #14532d;
+      margin-top: 4px;
+    }
+
+    .footer-brand {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: var(--green-btn);
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+    }
+
+    .footer-brand span {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .lang-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .lang-btn {
+      background: #ffffff;
+      border: 1.5px solid #d1d5db;
+      color: var(--text-dark);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="rbx-badge" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/>
+          <rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/>
+        </svg>
+      </span>
+      <span>LUFFY STORE</span>
+    </div>
+    <a class="tg-pill" href="https://t.me/bloxfruitreseller1230" target="_blank" rel="noopener noreferrer">
+      ✈ Telegram
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="hero-card">
+      <div class="hero-kicker" data-i18n="kicker">✦ 30-DAY PROMOTION • FAST • SAFE • 100% ✦</div>
+      <h1 class="hero-title" data-i18n="heroTitle">LUFFY បញ្ចូល ROBUX តម្លៃពិសេស</h1>
+      <p class="hero-sub" data-i18n="heroSub">តម្លៃពិសេស • បញ្ចូល Robux រហ័ស • ទំនាក់ទំនង @bloxfruitreseller1230</p>
+      <div class="promo-pill" data-i18n="promoPill">🔥 ប្រូម៉ូសិន 30 ថ្ងៃ • តម្លៃធូរ</div>
+    </section>
+
+    <section class="box-card">
+      <div class="step-heading">
+        <span class="step-badge">1</span>
+        <span data-i18n="step1Title">គណនី Roblox</span>
+      </div>
+      <label for="robloxUser" class="field-label" data-i18n="userLabel">ឈ្មោះអ្នកប្រើ Roblox របស់អ្នក</label>
+      <input
+        id="robloxUser"
+        type="text"
+        class="username-input"
+        placeholder="បញ្ចូលឈ្មោះអ្នកប្រើ Roblox"
+        autocomplete="off"
+      />
+      <div class="safety-box" data-i18n="safetyNote">
+        🔒 សូមប្រើតែឈ្មោះគណនីអ្នកប្រើប៉ុណ្ណោះ។ កុំផ្តល់ពាក្យសម្ងាត់ ឬលេខកូដផ្ទៀងផ្ទាត់ឱ្យអ្នកណាឡើយ។
+      </div>
+    </section>
+
+    <section class="box-card">
+      <div class="step-heading">
+        <span class="step-badge">2</span>
+        <span data-i18n="step2Title">ជ្រើសរើសកញ្ចប់ Robux</span>
+      </div>
+
+      <div class="pkg-grid" id="pkgGrid">
+        <button type="button" class="pkg-tile" onclick="pickPkg('50', '$0.45', this)">
+          <span class="pkg-tag">Best Seller</span>
+          <div class="pkg-top"><span class="pkg-robux">50</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$0.45</div>
+        </button>
+
+        <button type="button" class="pkg-tile active" onclick="pickPkg('100', '$0.90', this)">
+          <span class="pkg-tag">Best Seller</span>
+          <div class="pkg-top"><span class="pkg-robux">100</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$0.90</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('150', '$1.35', this)">
+          <div class="pkg-top"><span class="pkg-robux">150</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$1.35</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('200', '$1.80', this)">
+          <span class="pkg-tag">Best Seller</span>
+          <div class="pkg-top"><span class="pkg-robux">200</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$1.80</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('300', '$2.70', this)">
+          <div class="pkg-top"><span class="pkg-robux">300</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$2.70</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('400', '$3.60', this)">
+          <div class="pkg-top"><span class="pkg-robux">400</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$3.60</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('500', '$4.50', this)">
+          <div class="pkg-top"><span class="pkg-robux">500</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$4.50</div>
+        </button>
+
+        <button type="button" class="pkg-tile" onclick="pickPkg('1000', '$9.00', this)">
+          <span class="pkg-tag">1K</span>
+          <div class="pkg-top"><span class="pkg-robux">1000</span><span class="rbx-badge"><svg viewBox="0 0 64 64"><rect x="8" y="8" width="48" height="48" rx="9" fill="#167c49" stroke="#0f172a" stroke-width="4"/><rect x="24" y="24" width="16" height="16" rx="3" fill="#ffffff"/></svg></span></div>
+          <div class="pkg-sub">ROBUX</div>
+          <div class="pkg-price">$9.00</div>
+        </button>
+      </div>
+
+      <div class="total-row">
+        <span class="total-label" data-i18n="totalLabel">សរុប</span>
+        <span class="total-amount" id="totalDisplay">$0.90</span>
+      </div>
+
+      <button type="button" class="primary-btn" onclick="orderViaTelegram()" data-i18n="continueBtn">
+        🎁 បន្តទៅការទូទាត់
+      </button>
+      <p class="helper-caption" data-i18n="continueCaption">
+        ចុចដើម្បីបើកឆាត Telegram @bloxfruitreseller1230 ជាមួយកញ្ចប់ដែលបានជ្រើស។
+      </p>
+    </section>
+
+    <section class="notice-card">
+      <div class="notice-heading">
+        <span class="notice-num">3</span>
+        <span data-i18n="noticeTitle">សេចក្តីជូនដំណឹងសំខាន់</span>
+      </div>
+
+      <div class="notice-alert">
+        <div class="notice-alert-title" data-i18n="warnHeading">⚠️ សូមអានមុនពេលកម្មង់</div>
+        <div class="notice-alert-body" data-i18n="warnBody">
+          មិនទទួលដាក់អាខោនជាប់ Select, Unlocked, Kid នោះទេ❌
+        </div>
+      </div>
+
+      <div class="notice-pills">
+        <span class="notice-pill" data-i18n="chipFast">⚡ សេវាកម្មរហ័ស</span>
+        <span class="notice-pill" data-i18n="chipSupport">✅ ជំនួយការកម្មង់</span>
+        <span class="notice-pill" data-i18n="chipPromo">🎁 បញ្ចុះតម្លៃបុណ្យណូអែល</span>
+      </div>
+
+      <div class="notice-inbox">Inbox: @bloxfruitreseller1230</div>
+    </section>
+
+    <div class="footer-brand">
+      <strong>LUFFY STORE</strong>
+      <span data-i18n="thanksText">សូមអរគុណដែលបានគាំទ្រ Luffy Store!</span>
+    </div>
+
+    <div class="lang-wrap">
+      <button type="button" class="lang-btn" onclick="toggleLang()" id="langToggleBtn">English 🇬🇧</button>
+    </div>
+  </main>
+
+  <script>
+    const TG_HANDLE = "bloxfruitreseller1230";
+    let selectedRobux = "100";
+    let selectedPrice = "$0.90";
+    let lang = "km";
+
+    const STRINGS = {
+      km: {
+        toggleLabel: "English 🇬🇧",
+        kicker: "✦ ប្រូម៉ូសិន 30 ថ្ងៃ • រហ័ស • សុវត្ថិភាព • 100% ✦",
+        heroTitle: "LUFFY បញ្ចូល ROBUX តម្លៃពិសេស",
+        heroSub: "តម្លៃពិសេស • បញ្ចូល Robux រហ័ស • ទំនាក់ទំនង @bloxfruitreseller1230",
+        promoPill: "🔥 ប្រូម៉ូសិន 30 ថ្ងៃ • តម្លៃធូរ",
+        step1Title: "គណនី Roblox",
+        userLabel: "ឈ្មោះអ្នកប្រើ Roblox របស់អ្នក",
+        safetyNote: "🔒 សូមប្រើតែឈ្មោះគណនីអ្នកប្រើប៉ុណ្ណោះ។ កុំផ្តល់ពាក្យសម្ងាត់ ឬលេខកូដផ្ទៀងផ្ទាត់ឱ្យអ្នកណាឡើយ។",
+        step2Title: "ជ្រើសរើសកញ្ចប់ Robux",
+        totalLabel: "សរុប",
+        continueBtn: "🎁 បន្តទៅការទូទាត់",
+        continueCaption: "ចុចដើម្បីបើកឆាត Telegram @bloxfruitreseller1230 ជាមួយកញ្ចប់ដែលបានជ្រើស។",
+        noticeTitle: "សេចក្តីជូនដំណឹងសំខាន់",
+        warnHeading: "⚠️ សូមអានមុនពេលកម្មង់",
+        warnBody: "មិនទទួលដាក់អាខោនជាប់ Select, Unlocked, Kid នោះទេ❌",
+        chipFast: "⚡ សេវាកម្មរហ័ស",
+        chipSupport: "✅ ជំនួយការកម្មង់",
+        chipPromo: "🎁 បញ្ចុះតម្លៃបុណ្យណូអែល",
+        thanksText: "សូមអរគុណដែលបានគាំទ្រ Luffy Store!"
+      },
+      en: {
+        toggleLabel: "ភាសាខ្មែរ 🇰🇭",
+        kicker: "✦ 30-DAY PROMOTION • FAST • SAFE • 100% ✦",
+        heroTitle: "LUFFY ROBUX TOP-UP",
+        heroSub: "Special prices • Fast Robux delivery • Inbox @bloxfruitreseller1230",
+        promoPill: "🔥 30-DAY PROMOTION • BEST VALUE",
+        step1Title: "Roblox Account",
+        userLabel: "Your Roblox username",
+        safetyNote: "🔒 Username only. Never give anyone your Roblox password or verification code.",
+        step2Title: "Choose your Robux package",
+        totalLabel: "TOTAL",
+        continueBtn: "🎁 CONTINUE TO ORDER",
+        continueCaption: "Opens Telegram chat with @bloxfruitreseller1230 and your selected package.",
+        noticeTitle: "Important notice",
+        warnHeading: "⚠️ Please read before ordering",
+        warnBody: "We do not top up accounts with Select, Unlocked, or Kid restrictions ❌",
+        chipFast: "⚡ Fast service",
+        chipSupport: "✅ Order support",
+        chipPromo: "🎁 Christmas discount",
+        thanksText: "Thank you for shopping with Luffy Store!"
+      }
+    };
+
+    function pickPkg(robux, price, el) {
+      const all = document.querySelectorAll(".pkg-tile");
+      for (let i = 0; i < all.length; i++) {
+        all[i].classList.remove("active");
+      }
+      if (el) el.classList.add("active");
+      selectedRobux = robux;
+      selectedPrice = price;
+      const totalEl = document.getElementById("totalDisplay");
+      if (totalEl) totalEl.textContent = price;
+    }
+
+    function orderViaTelegram() {
+      const inputEl = document.getElementById("robloxUser");
+      const username = inputEl && inputEl.value.trim() ? inputEl.value.trim() : "-";
+      const msg = [
+        `Hello @${TG_HANDLE}, I want to buy Robux!`,
+        `• Roblox Username: ${username}`,
+        `• Package: ${selectedRobux} Robux (${selectedPrice})`
+  
